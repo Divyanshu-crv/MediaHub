@@ -1,0 +1,363 @@
+/*==========================================================
+                    MEDIAHUB
+                ANIMATION STYLES
+==========================================================*/
+
+
+/*==========================================================
+                    VARIABLES
+==========================================================*/
+
+:root{
+
+    --fast:.25s;
+
+    --normal:.35s;
+
+    --slow:.6s;
+
+}
+
+
+/*==========================================================
+                    KEYFRAMES
+==========================================================*/
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes slideUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:translateY(0);
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes scaleIn{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.9);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+@keyframes floatCard{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-6px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.05);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+@keyframes rotate{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+
+/*==========================================================
+                    GLOBAL TRANSITIONS
+==========================================================*/
+
+*{
+
+    transition:
+
+        background-color var(--normal),
+
+        color var(--normal),
+
+        border-color var(--normal),
+
+        transform var(--normal),
+
+        box-shadow var(--normal);
+
+}
+
+
+/*==========================================================
+                    LOADING
+==========================================================*/
+
+#loadingScreen{
+
+    animation:fadeIn .5s;
+
+}
+
+#loadingScreen h1{
+
+    animation:pulse 2s infinite;
+
+}
+
+
+/*==========================================================
+                    HEADER
+==========================================================*/
+
+header{
+
+    animation:slideUp .7s;
+
+}
+
+
+/*==========================================================
+                    SEARCH
+==========================================================*/
+
+#searchSection{
+
+    animation:fadeIn .8s;
+
+}
+
+#searchInput:focus{
+
+    transform:scale(1.02);
+
+}
+
+
+/*==========================================================
+                    DASHBOARD
+==========================================================*/
+
+#statisticsContainer .card{
+
+    animation:scaleIn .5s;
+
+}
+
+
+/*==========================================================
+                    FRIEND CARDS
+==========================================================*/
+
+#friendsContainer .card{
+
+    animation:slideUp .5s;
+
+}
+
+#friendsContainer .card:hover{
+
+    transform:translateY(-10px) scale(1.02);
+
+}
+
+
+/*==========================================================
+                    SONG CARDS
+==========================================================*/
+
+#songsContainer .card{
+
+    animation:fadeIn .5s;
+
+}
+
+#songsContainer .card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+
+/*==========================================================
+                    IMAGES
+==========================================================*/
+
+.card img{
+
+    transition:transform .4s;
+
+}
+
+.card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+
+/*==========================================================
+                    BUTTONS
+==========================================================*/
+
+button{
+
+    transition:all .3s;
+
+}
+
+button:hover{
+
+    transform:translateY(-3px);
+
+}
+
+button:active{
+
+    transform:scale(.95);
+
+}
+
+
+/*==========================================================
+                    FAVORITE BUTTON
+==========================================================*/
+
+.favorite-active{
+
+    animation:pulse .5s;
+
+}
+
+
+/*==========================================================
+                    PLAY BUTTON
+==========================================================*/
+
+.play-button:hover{
+
+    animation:pulse .6s;
+
+}
+
+
+/*==========================================================
+                    LOGO
+==========================================================*/
+
+.logo h1{
+
+    transition:.4s;
+
+}
+
+.logo h1:hover{
+
+    transform:scale(1.03);
+
+}
+
+
+/*==========================================================
+                    FOOTER
+==========================================================*/
+
+footer{
+
+    animation:fadeIn 1.2s;
+
+}
+
+
+/*==========================================================
+                    EMPTY STATE
+==========================================================*/
+
+#emptyState{
+
+    animation:fadeIn .5s;
+
+}
+
+
+/*==========================================================
+                    HIDDEN
+==========================================================*/
+
+.hidden{
+
+    display:none !important;
+
+}

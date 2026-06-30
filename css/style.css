@@ -1,0 +1,420 @@
+/*==========================================================
+                    MEDIAHUB
+                 MAIN STYLE SHEET
+==========================================================*/
+
+/*==========================================================
+                    GOOGLE FONT
+==========================================================*/
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/*==========================================================
+                    VARIABLES
+==========================================================*/
+
+:root{
+
+    --bg:#0f172a;
+
+    --card:#1e293b;
+
+    --card-hover:#26364d;
+
+    --primary:#3b82f6;
+
+    --secondary:#8b5cf6;
+
+    --success:#22c55e;
+
+    --danger:#ef4444;
+
+    --white:#ffffff;
+
+    --text:#f8fafc;
+
+    --light:#cbd5e1;
+
+    --border:#334155;
+
+    --shadow:0 15px 35px rgba(0,0,0,.35);
+
+    --radius:18px;
+
+}
+
+/*==========================================================
+                    RESET
+==========================================================*/
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:Poppins,sans-serif;
+
+}
+
+body{
+
+    background:var(--bg);
+
+    color:var(--text);
+
+}
+
+/*==========================================================
+                    APP
+==========================================================*/
+
+#app{
+
+    width:95%;
+
+    max-width:1450px;
+
+    margin:auto;
+
+}
+
+/*==========================================================
+                    LOADING SCREEN
+==========================================================*/
+
+#loadingScreen{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#08111f;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:15px;
+
+    z-index:9999;
+
+}
+
+#loadingScreen h1{
+
+    font-size:42px;
+
+}
+
+#loadingScreen p{
+
+    color:var(--light);
+
+}
+
+/*==========================================================
+                    HEADER
+==========================================================*/
+
+header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:35px 0;
+
+}
+
+.logo h1{
+
+    font-size:42px;
+
+}
+
+.logo p{
+
+    color:var(--light);
+
+    margin-top:5px;
+
+}
+
+.headerButtons{
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+/*==========================================================
+                    BUTTON
+==========================================================*/
+
+button{
+
+    border:none;
+
+    cursor:pointer;
+
+    border-radius:12px;
+
+    padding:13px 18px;
+
+    font-size:15px;
+
+    color:white;
+
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+
+    box-shadow:var(--shadow);
+
+}
+
+button:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/*==========================================================
+                    SEARCH
+==========================================================*/
+
+#searchSection{
+
+    margin:20px 0 45px;
+
+}
+
+#searchInput{
+
+    width:100%;
+
+    padding:20px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:var(--card);
+
+    color:white;
+
+    font-size:17px;
+
+    outline:none;
+
+}
+
+#searchInput::placeholder{
+
+    color:#94a3b8;
+
+}
+
+/*==========================================================
+                    SECTION
+==========================================================*/
+
+section{
+
+    margin:45px 0;
+
+}
+
+.sectionHeader{
+
+    margin-bottom:20px;
+
+}
+
+.sectionHeader h2{
+
+    font-size:32px;
+
+}
+
+/*==========================================================
+                    DASHBOARD
+==========================================================*/
+
+#statisticsContainer{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+
+}
+
+/*==========================================================
+                    FRIENDS
+==========================================================*/
+
+#friendsContainer{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+
+    gap:25px;
+
+}
+
+/*==========================================================
+                    SONGS
+==========================================================*/
+
+#songsContainer{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fill,minmax(330px,1fr));
+
+    gap:25px;
+
+}
+
+/*==========================================================
+                    CARD
+==========================================================*/
+
+.card{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius);
+
+    padding:25px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.card:hover{
+
+    background:var(--card-hover);
+
+}
+
+/*==========================================================
+                    FRIEND IMAGE
+==========================================================*/
+
+.card img{
+
+    width:120px;
+
+    height:120px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    display:block;
+
+    margin:auto;
+
+    border:4px solid var(--primary);
+
+    margin-bottom:18px;
+
+}
+
+.card h2{
+
+    text-align:center;
+
+    margin-bottom:10px;
+
+}
+
+.card p{
+
+    text-align:center;
+
+    color:var(--light);
+
+    margin-bottom:8px;
+
+}
+
+/*==========================================================
+                    SONG BUTTONS
+==========================================================*/
+
+.card button{
+
+    width:100%;
+
+    margin-top:10px;
+
+}
+
+/*==========================================================
+                    EMPTY
+==========================================================*/
+
+#emptyState{
+
+    text-align:center;
+
+}
+
+/*==========================================================
+                    FOOTER
+==========================================================*/
+
+footer{
+
+    margin:80px 0 30px;
+
+    text-align:center;
+
+    color:var(--light);
+
+}
+
+/*==========================================================
+                    SCROLLBAR
+==========================================================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#111827;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--secondary);
+
+}

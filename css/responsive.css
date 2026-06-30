@@ -1,0 +1,306 @@
+/*==========================================================
+                    MEDIAHUB
+               RESPONSIVE STYLES
+==========================================================*/
+
+
+/*==========================================================
+                    LARGE DESKTOP
+==========================================================*/
+
+@media (min-width:1600px){
+
+    #app{
+
+        max-width:1550px;
+
+    }
+
+}
+
+
+/*==========================================================
+                    LAPTOP
+==========================================================*/
+
+@media (max-width:1200px){
+
+    #statisticsContainer{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    #friendsContainer{
+
+        grid-template-columns:repeat(3,1fr);
+
+    }
+
+    #songsContainer{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+
+/*==========================================================
+                    TABLET
+==========================================================*/
+
+@media (max-width:992px){
+
+    header{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        gap:25px;
+
+    }
+
+    .headerButtons{
+
+        width:100%;
+
+        justify-content:center;
+
+        flex-wrap:wrap;
+
+    }
+
+    .logo h1{
+
+        font-size:36px;
+
+    }
+
+    .logo p{
+
+        font-size:15px;
+
+    }
+
+    #statisticsContainer{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    #friendsContainer{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    #songsContainer{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+
+/*==========================================================
+                    LARGE MOBILE
+==========================================================*/
+
+@media (max-width:768px){
+
+    #app{
+
+        width:94%;
+
+    }
+
+    .logo h1{
+
+        font-size:30px;
+
+    }
+
+    .logo p{
+
+        font-size:14px;
+
+    }
+
+    .headerButtons{
+
+        flex-direction:column;
+
+        width:100%;
+
+    }
+
+    .headerButtons button{
+
+        width:100%;
+
+    }
+
+    #statisticsContainer{
+
+        grid-template-columns:1fr;
+
+    }
+
+    #friendsContainer{
+
+        grid-template-columns:1fr;
+
+    }
+
+    #songsContainer{
+
+        grid-template-columns:1fr;
+
+    }
+
+    section{
+
+        margin:35px 0;
+
+    }
+
+    .sectionHeader h2{
+
+        font-size:26px;
+
+    }
+
+    #searchInput{
+
+        padding:18px;
+
+        font-size:16px;
+
+    }
+
+}
+
+
+/*==========================================================
+                    SMALL MOBILE
+==========================================================*/
+
+@media (max-width:480px){
+
+    body{
+
+        font-size:15px;
+
+    }
+
+    #app{
+
+        width:95%;
+
+    }
+
+    header{
+
+        padding:25px 0;
+
+    }
+
+    .logo h1{
+
+        font-size:26px;
+
+    }
+
+    .logo p{
+
+        font-size:13px;
+
+    }
+
+    .sectionHeader h2{
+
+        font-size:22px;
+
+    }
+
+    .card{
+
+        padding:18px;
+
+    }
+
+    .card img{
+
+        width:90px;
+
+        height:90px;
+
+    }
+
+    #searchInput{
+
+        padding:15px;
+
+        font-size:15px;
+
+    }
+
+    button{
+
+        padding:12px;
+
+        font-size:14px;
+
+    }
+
+    footer{
+
+        margin-top:50px;
+
+        font-size:14px;
+
+    }
+
+}
+
+
+/*==========================================================
+                    EXTRA SMALL DEVICES
+==========================================================*/
+
+@media (max-width:320px){
+
+    .logo h1{
+
+        font-size:22px;
+
+    }
+
+    .logo p{
+
+        font-size:12px;
+
+    }
+
+    #searchInput{
+
+        font-size:13px;
+
+    }
+
+    .sectionHeader h2{
+
+        font-size:20px;
+
+    }
+
+    button{
+
+        font-size:13px;
+
+    }
+
+}
