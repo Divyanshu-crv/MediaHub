@@ -1,183 +1,150 @@
-/*==========================================================
-                    MEDIAHUB SEARCH
-==========================================================*/
-
 "use strict";
 
-/*==========================================================
-                    SEARCH STATE
-==========================================================*/
-
 const SEARCH = {
-
-    text: ""
-
+    text: "",
+    maxSuggestions: 5
 };
 
-
-
-/*==========================================================
-                    INITIALIZE
-==========================================================*/
-
-function initializeSearch(){
+function initializeSearch() {
 
     const input = document.getElementById("searchInput");
+    const box = document.getElementById("searchSuggestions");
 
-    if(!input){
+    if (!input || !box) return;
 
-        return;
-
-    }
-
-    input.addEventListener("input", function(){
+    input.addEventListener("input", function () {
 
         SEARCH.text = this.value.trim().toLowerCase();
 
         performSearch();
+        showSuggestions();
+
+    });
+
+    document.addEventListener("click", function (e) {
+
+        if (
+            !e.target.closest("#searchSection")
+        ) {
+            hideSuggestions();
+        }
 
     });
 
 }
 
+function showSuggestions() {
 
+    const box = document.getElementById("searchSuggestions");
 
-/*==========================================================
-                    SEARCH
-==========================================================*/
+    if (!box) return;
 
-function performSearch(){
+    box.innerHTML = "";
 
-    if(SEARCH.text===""){
+    if (SEARCH.text === "") {
 
-        if(UI.currentFriend){
-
-            renderSongs(
-
-                getMediaByFriend(UI.currentFriend)
-
-            );
-
-        }
-
-        else{
-
-            renderSongs();
-
-        }
-
+        hideSuggestions();
         return;
 
     }
 
-    let media = getAllMedia();
+    const results = getAllMedia().filter(song =>
+        song.title.toLowerCase().includes(SEARCH.text)
+    );
 
-    if(UI.currentFriend){
+    if (results.length === 0) {
 
-        media = getMediaByFriend(UI.currentFriend);
+        hideSuggestions();
+        return;
 
     }
 
-    const results = media.filter(item=>{
+    results.slice(0, SEARCH.maxSuggestions).forEach(song => {
 
-        const friend = getFriendById(item.owner);
+        box.insertAdjacentHTML(
+            "beforeend",
+            `
+            <div class="searchItem"
+                 onclick="selectSuggestion('${song.title}')">
 
-        const category = getCategoryById(item.category);
+                🎵 ${song.title}
 
-        return(
-
-            item.title.toLowerCase().includes(SEARCH.text) ||
-
-            (friend && friend.name.toLowerCase().includes(SEARCH.text)) ||
-
-            (category && category.name.toLowerCase().includes(SEARCH.text)) ||
-
-            item.id.toLowerCase().includes(SEARCH.text)
-
+            </div>
+            `
         );
 
     });
 
-    renderSearchResults(results);
+    box.style.display = "block";
 
 }
 
+function hideSuggestions() {
 
+    const box = document.getElementById("searchSuggestions");
 
-/*==========================================================
-                    CLEAR SEARCH
-==========================================================*/
+    if (box) {
 
-function clearSearch(){
-
-    SEARCH.text="";
-
-    const input=document.getElementById("searchInput");
-
-    if(input){
-
-        input.value="";
+        box.style.display = "none";
 
     }
+
+}
+
+function selectSuggestion(title) {
+
+    const input = document.getElementById("searchInput");
+
+    input.value = title;
+
+    SEARCH.text = title.toLowerCase();
+
+    hideSuggestions();
 
     performSearch();
 
 }
 
+function performSearch() {
 
+    let media = getAllMedia();
 
-/*==========================================================
-                    SEARCH BY CATEGORY
-==========================================================*/
+    if (UI.currentFriend) {
 
-function searchCategory(categoryId){
-
-    const results=getMediaByCategory(categoryId);
-
-    renderSearchResults(results);
-
-}
-
-
-
-/*==========================================================
-                    SEARCH FRIEND
-==========================================================*/
-
-function searchFriend(friendId){
-
-    const results=getMediaByFriend(friendId);
-
-    renderSearchResults(results);
-
-}
-
-
-
-/*==========================================================
-                    RANDOM SONG
-==========================================================*/
-
-function playRandomSong(){
-
-    const media=getRandomMedia();
-
-    if(media){
-
-        openLink(media.source);
+        media = getMediaByFriend(UI.currentFriend);
 
     }
 
+    if (UI.currentCategory) {
+
+        media = media.filter(item =>
+            item.category === UI.currentCategory
+        );
+
+    }
+
+    if (SEARCH.text !== "") {
+
+        media = media.filter(item =>
+            item.title.toLowerCase().includes(SEARCH.text)
+        );
+
+    }
+
+    renderSongs(media);
+
 }
 
+function clearSearch() {
 
+    SEARCH.text = "";
 
-/*==========================================================
-                    DEBUG
-==========================================================*/
+    const input = document.getElementById("searchInput");
 
-function printSearch(){
+    if (input) input.value = "";
 
-    console.log("Search :",SEARCH.text);
+    hideSuggestions();
+
+    performSearch();
 
 }

@@ -418,3 +418,315 @@ footer{
     background:var(--secondary);
 
 }
+
+
+/* ====================================================================== */
+
+/*==========================================================
+                    HERO SECTION
+==========================================================*/
+
+#heroSection{
+
+    margin:40px 0;
+
+}
+
+.heroContent{
+
+    background:linear-gradient(135deg,#3b82f6,#8b5cf6);
+
+    border-radius:25px;
+
+    padding:60px 40px;
+
+    text-align:center;
+
+    color:white;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+
+}
+
+.heroContent h1{
+
+    font-size:48px;
+
+    margin-bottom:15px;
+
+}
+
+.heroContent p{
+
+    font-size:18px;
+
+    opacity:.95;
+
+    margin-bottom:40px;
+
+}
+
+.heroStats{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:40px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:40px;
+
+}
+
+.heroStats div{
+
+    min-width:120px;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(10px);
+
+    padding:20px;
+
+    border-radius:18px;
+
+}
+
+.heroStats h2{
+
+    font-size:36px;
+
+    margin-bottom:8px;
+
+}
+
+.heroStats p{
+
+    margin:0;
+
+    font-size:15px;
+
+}
+
+.heroContent button{
+
+    background:white;
+
+    color:#2563eb;
+
+    font-size:18px;
+
+    padding:15px 35px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+}
+
+.heroContent button:hover{
+
+    transform:translateY(-4px) scale(1.05);
+
+}
+
+/* ======================================= */
+
+/*==========================================================
+                    LIGHT THEME
+==========================================================*/
+
+body[data-theme="light"]{
+
+    --bg:#f4f7fb;
+
+    --card:#ffffff;
+
+    --card-hover:#eef4ff;
+
+    --text:#111827;
+
+    --light:#4b5563;
+
+    --border:#dbe4f0;
+
+}
+
+
+
+/*==========================================================
+                SMOOTH THEME CHANGE
+==========================================================*/
+
+body,
+
+.card,
+
+button,
+
+header,
+
+section,
+
+input{
+
+    transition:
+
+    background .35s,
+
+    color .35s,
+
+    border-color .35s;
+
+}
+
+/* ============================== ========================== */
+
+/*==========================================================
+                    CATEGORY SECTION
+==========================================================*/
+
+#categoryContainer{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin:25px 0 30px;
+
+    justify-content:center;
+
+}
+
+
+
+/*==========================================================
+                    CATEGORY CHIP
+==========================================================*/
+
+.categoryChip{
+
+    padding:10px 22px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    background:#20232a;
+
+    color:#ffffff;
+
+    transition:all .3s ease;
+
+    user-select:none;
+
+}
+
+
+
+.categoryChip:hover{
+
+    transform:translateY(-3px);
+
+    background:#2563eb;
+
+    box-shadow:0 10px 20px rgba(37,99,235,.35);
+
+}
+
+
+
+.categoryChip.active{
+
+    background:#2563eb;
+
+    color:#ffffff;
+
+}
+
+
+
+/*==========================================================
+                CATEGORY ANIMATION
+==========================================================*/
+
+.categoryChip{
+
+    animation:fadeIn .35s ease;
+
+}
+
+
+/*==========================================================
+                SEARCH SUGGESTIONS
+==========================================================*/
+
+#searchSection{
+    position:relative;
+}
+
+#searchSuggestions{
+
+    position:absolute;
+
+    top:100%;
+
+    left:0;
+
+    width:100%;
+
+    background:#1f2937;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    display:none;
+
+    z-index:999;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+
+}
+
+.searchItem{
+
+    padding:14px 18px;
+
+    cursor:pointer;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    transition:.25s;
+
+}
+
+.searchItem:last-child{
+
+    border-bottom:none;
+
+}
+
+.searchItem:hover{
+
+    background:#2563eb;
+
+}
+
+.searchItem span{
+
+    opacity:.7;
+
+    font-size:13px;
+
+}

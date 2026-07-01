@@ -753,3 +753,200 @@ console.log(
     "color:#22c55e;font-size:16px;font-weight:bold;"
 
 );
+
+// =======================================================
+
+/*==========================================================
+                    HERO SECTION
+==========================================================*/
+
+function updateHero(){
+
+    const friends = document.getElementById("heroFriends");
+
+    const songs = document.getElementById("heroSongs");
+
+    const favorites = document.getElementById("heroFavorites");
+
+    if(friends){
+
+        friends.textContent = getTotalFriends();
+
+    }
+
+    if(songs){
+
+        songs.textContent = getTotalMedia();
+
+    }
+
+    if(favorites){
+
+        favorites.textContent = getFavorites().length;
+
+    }
+
+}
+
+
+
+/*==========================================================
+                UPDATE HERO AFTER UI REFRESH
+==========================================================*/
+
+const oldRefreshUI = refreshUI;
+
+refreshUI = function(){
+
+    oldRefreshUI();
+
+    updateHero();
+
+};
+
+
+
+/*==========================================================
+            UPDATE HERO AFTER INITIALIZATION
+==========================================================*/
+
+const oldInitializeUI = initializeUI;
+
+initializeUI = function(){
+
+    oldInitializeUI();
+
+    updateHero();
+
+};
+
+
+
+/*==========================================================
+                HERO BUTTON ANIMATION
+==========================================================*/
+
+function heroExplore(){
+
+    showAllMedia();
+
+    const mediaSection = document.getElementById("mediaSection");
+
+    if(mediaSection){
+
+        mediaSection.scrollIntoView({
+
+            behavior:"smooth"
+
+        });
+
+    }
+
+}
+
+
+/*==========================================================
+                    CATEGORY CHIPS
+==========================================================*/
+
+function renderCategories() {
+
+    const container = document.getElementById("categoryContainer");
+
+    if (!container) return;
+
+    container.innerHTML = "";
+
+    // All Button
+    container.insertAdjacentHTML(
+        "beforeend",
+        `
+        <button
+            class="categoryChip ${UI.currentCategory === null ? "active" : ""}"
+            onclick="showAllMedia()">
+            All
+        </button>
+        `
+    );
+
+    // Dynamic Categories
+    getAllCategories().forEach(category => {
+
+        container.insertAdjacentHTML(
+            "beforeend",
+            `
+            <button
+                class="categoryChip ${UI.currentCategory === category.id ? "active" : ""}"
+                onclick="filterCategory('${category.id}')">
+                ${category.name}
+            </button>
+            `
+        );
+
+    });
+
+}
+
+
+
+/*==========================================================
+                FILTER CATEGORY
+==========================================================*/
+
+function filterCategory(categoryId){
+
+    UI.currentCategory = categoryId;
+
+    let media = getMediaByCategory(categoryId);
+
+    if(UI.currentFriend){
+
+        media = media.filter(item => item.owner === UI.currentFriend);
+
+    }
+
+    renderCategories();
+
+    renderSongs(media);
+
+}
+
+
+
+/*==========================================================
+                SHOW ALL MEDIA
+==========================================================*/
+
+function showAllMedia(){
+
+    UI.currentCategory = null;
+
+    let media = getAllMedia();
+
+    if(UI.currentFriend){
+
+        media = getMediaByFriend(UI.currentFriend);
+
+    }
+
+    renderCategories();
+
+    renderSongs(media);
+
+}
+
+
+
+/*==========================================================
+            UPDATE CATEGORY AFTER UI LOAD
+==========================================================*/
+
+const oldInitializeUI2 = initializeUI;
+
+initializeUI = function(){
+
+    oldInitializeUI2();
+
+    renderCategories();
+
+};

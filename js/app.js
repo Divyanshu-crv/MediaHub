@@ -277,3 +277,122 @@ console.log(
 "color:#3b82f6;font-size:18px;font-weight:bold;"
 
 );
+
+
+// =============================================================
+
+/*==========================================================
+                    THEME SYSTEM
+==========================================================*/
+
+function initializeTheme(){
+
+    const savedTheme = localStorage.getItem("mediahub_theme") || "dark";
+
+    applyTheme(savedTheme);
+
+}
+
+
+
+function applyTheme(theme){
+
+    document.body.setAttribute(
+
+        "data-theme",
+
+        theme
+
+    );
+
+    localStorage.setItem(
+
+        "mediahub_theme",
+
+        theme
+
+    );
+
+
+
+    const button = document.getElementById("themeButton");
+
+
+
+    if(button){
+
+        button.innerHTML =
+
+        theme==="dark"
+
+        ?
+
+        "🌙 Dark"
+
+        :
+
+        "☀️ Light";
+
+    }
+
+}
+
+
+
+function toggleTheme(){
+
+    const current =
+
+    document.body.getAttribute("data-theme") || "dark";
+
+
+
+    const next =
+
+    current==="dark"
+
+    ?
+
+    "light"
+
+    :
+
+    "dark";
+
+
+
+    applyTheme(next);
+
+}
+
+
+
+/*==========================================================
+            CONNECT BUTTON
+==========================================================*/
+
+document.addEventListener(
+
+    "DOMContentLoaded",
+
+    function(){
+
+        const button =
+
+        document.getElementById("themeButton");
+
+
+
+        if(button){
+
+            button.onclick = toggleTheme;
+
+        }
+
+
+
+        initializeTheme();
+
+    }
+
+);
