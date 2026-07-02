@@ -15,7 +15,7 @@ const DATA = {
         {
             id: "Chuhiya",
             name: "Chuhiya",
-            photo: "images/friends/chuhiya.jpg",
+            photo: "images/friends/chuhiya.webp",
             bio: "Love ❤️"
         },
 
@@ -155,6 +155,22 @@ const DATA = {
             type: "song",
 
             source: "https://youtu.be/RX3Xenjc-GE?si=t9DB5mrZtcC_Mu4Z",
+
+            downloadable: false
+        },
+
+        {
+            id: "S005",
+
+            title: "Aaj Se Teri ",
+
+            owner: "Smilyboy",
+
+            category: "hindi",
+
+            type: "love",
+
+            source: "https://youtu.be/NFsEqOBG51M?si=M5P0egbm-OoZLQCr",
 
             downloadable: false
         }
