@@ -13,23 +13,30 @@ const DATA = {
     friends: [
 
         {
-            id: "chuhiya",
+            id: "Chuhiya",
             name: "Chuhiya",
             photo: "images/friends/chuhiya.jpg",
-            bio: "Best Friend ❤️"
+            bio: "Love ❤️"
         },
 
         {
-            id: "rahul",
-            name: "Rahul",
-            photo: "images/friends/rahul.jpg",
+            id: "Smilyboy",
+            name: "Smilyboy",
+            photo: "images/friends/smilyboy.webp",
             bio: "Music Lover"
         },
 
         {
-            id: "aman",
-            name: "Aman",
-            photo: "images/friends/aman.jpg",
+            id: "Chutki",
+            name: "Chutki",
+            photo: "images/friends/chutki.webp",
+            bio: "Old Songs Fan"
+        },
+
+        {
+            id: "Sukh",
+            name: "Sukh",
+            photo: "images/friends/sukh.webp",
             bio: "Old Songs Fan"
         }
 
@@ -56,6 +63,11 @@ const DATA = {
         {
             id: "old",
             name: "Old Songs"
+        },
+
+        {
+            id: "love",
+            name: "Love"
         },
 
         {
@@ -86,15 +98,15 @@ const DATA = {
         {
             id: "S001",
 
-            title: "Kesariya",
+            title: "CHAND NARAZ HAI",
 
-            owner: "chuhiya",
+            owner: "Chuhiya",
 
-            category: "hindi",
+            category: "love",
 
             type: "song",
 
-            source: "https://youtu.be/example1",
+            source: "https://youtu.be/NiC-M1BHFoo?si=jABhjBMimiIfYcec",
 
             downloadable: false
         },
@@ -102,15 +114,15 @@ const DATA = {
         {
             id: "S002",
 
-            title: "Tum Hi Ho",
+            title: "Chaap Tilak",
 
-            owner: "chuhiya",
+            owner: "Smilyboy",
 
-            category: "romantic",
+            category: "hindi",
 
             type: "song",
 
-            source: "https://youtu.be/example2",
+            source: "https://youtu.be/CaKXsXDLHhY?si=KhigoouK03lgyPJO",
 
             downloadable: false
         },
@@ -118,15 +130,15 @@ const DATA = {
         {
             id: "S003",
 
-            title: "Lollipop Lagelu",
+            title: "Deewane Hum Nahi Hote",
 
-            owner: "rahul",
+            owner: "Smilyboy",
 
-            category: "bhojpuri",
+            category: "hindi",
 
             type: "song",
 
-            source: "https://youtu.be/example3",
+            source: "https://youtu.be/B-oZ64A_TeQ?si=fG1WWE5P-jxyJlwe",
 
             downloadable: false
         },
@@ -134,15 +146,15 @@ const DATA = {
         {
             id: "S004",
 
-            title: "Lag Ja Gale",
+            title: "Odhani Odh Ke Nachu",
 
-            owner: "aman",
+            owner: "Smilyboy",
 
-            category: "old",
+            category: "hindi",
 
             type: "song",
 
-            source: "https://youtu.be/example4",
+            source: "https://youtu.be/RX3Xenjc-GE?si=t9DB5mrZtcC_Mu4Z",
 
             downloadable: false
         }
