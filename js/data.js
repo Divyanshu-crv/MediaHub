@@ -38,6 +38,13 @@ const DATA = {
             name: "Sukh",
             photo: "images/friends/sukh.webp",
             bio: "Old Songs Fan"
+        },
+
+        {
+            id: "pk",
+            name: "pk",
+            photo: "images/friends/sukh .webp",
+            bio: "Old Songs Fan"
         }
 
     ],
@@ -53,6 +60,11 @@ const DATA = {
         {
             id: "hindi",
             name: "Hindi"
+        },
+
+        {
+            id: "english",
+            name: "English"
         },
 
         {
@@ -171,6 +183,38 @@ const DATA = {
             type: "love",
 
             source: "https://youtu.be/NFsEqOBG51M?si=M5P0egbm-OoZLQCr",
+
+            downloadable: false
+        },
+
+        {
+            id: "S006",
+
+            title: "Perfect ",
+
+            owner: "Chutki",
+
+            category: "english",
+
+            type: "english",
+
+            source: "https://youtu.be/cNGjD0VG4R8?si=B3D9_iNQrBBG_YJ6",
+
+            downloadable: false
+        },
+
+        {
+            id: "S007",
+
+            title: "Sitaare  ",
+
+            owner: "pk",
+
+            category: "hindi",
+
+            type: "hindi",
+
+            source: "https://youtu.be/nDjloeIB3Pc?si=D4f_Mt_cx6c9XozP",
 
             downloadable: false
         }
